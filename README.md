@@ -1,2 +1,2 @@
 - [AICE를 위한 답러닝](https://newids.github.io/dl4aice/)
-- [JavaScript 개발자를 위한 Python](https://newids.github.io/python4js/
+- [JavaScript 개발자를 위한 Python](https://newids.github.io/python4js/)
