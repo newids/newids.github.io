@@ -1,0 +1,9 @@
+#!/bin/sh
+# newids.github.io/mac  -  iMac 실습 환경 설정 진입점 (짧은 URL 별칭)
+#
+#   curl -fsSL newids.github.io/mac | sh                 # 두벌식
+#   curl -fsSL newids.github.io/mac | sh -s -- han3final # 세벌식 최종
+#
+# 실제 스크립트는 claude-docker 저장소의 iMac-setup.sh 이며, 이 파일은
+# 그것을 받아 인자를 그대로 넘겨 실행하는 역할만 한다.
+curl -fsSL https://raw.githubusercontent.com/newids/claude-docker/main/iMac-setup.sh | sh -s -- "$@"
