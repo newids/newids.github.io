@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>newids — 공개 프로젝트 색인</title>
+<meta name="description" content="JS Choi(newids)가 공개한 e-book, Codyssey 미션 결과물, 브라우저 도구, 기획 문서와 실험 프로젝트를 한 페이지에 정리한 색인.">
+<meta property="og:title" content="newids — 공개 프로젝트 색인">
+<meta property="og:description" content="대표 작업 2건, e-book 3권, Codyssey 미션 5건, 도구 4개, 기획·피치 2건, 실험 4건, 아카이브 2건.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://newids.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%23f6f1e8%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Georgia,serif%27 font-style=%27italic%27 font-size=%2720%27 text-anchor=%27middle%27 fill=%27%23b5402e%27%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root {
+  --paper: oklch(97.5% 0.012 85);
+  --paper-deep: oklch(94% 0.02 80);
+  --ink: oklch(22% 0.02 60);
+  --ink-soft: oklch(45% 0.02 60);
+  --ink-mute: oklch(62% 0.015 60);
+  --rule: oklch(84% 0.02 75);
+  --accent: oklch(55% 0.19 30);
+  --accent-ink: oklch(98% 0.01 30);
+  --accent-wash: oklch(93% 0.05 35);
+  --shelf-1: oklch(60% 0.14 150);
+  --shelf-2: oklch(58% 0.16 255);
+  --shelf-3: oklch(62% 0.17 60);
+  --font-body: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", sans-serif;
+  --font-display: "Instrument Serif", "Iowan Old Style", Georgia, "Apple Myungjo", "Nanum Myeongjo", Batang, serif;
+  --measure: 72rem;
+  --gutter: clamp(1rem, 4vw, 3rem);
+  --step--1: clamp(0.82rem, 0.78rem + 0.2vw, 0.92rem);
+  --step-0: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --step-1: clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem);
+  --step-2: clamp(1.6rem, 1.3rem + 1.4vw, 2.5rem);
+  --step-3: clamp(2.6rem, 1.6rem + 5vw, 6.5rem);
+  --space-s: clamp(0.75rem, 0.6rem + 0.6vw, 1.1rem);
+  --space-m: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);
+  --space-l: clamp(3rem, 2rem + 4vw, 6rem);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 640ms;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: oklch(17% 0.012 60);
+    --paper-deep: oklch(21% 0.015 60);
+    --ink: oklch(94% 0.01 80);
+    --ink-soft: oklch(74% 0.015 75);
+    --ink-mute: oklch(56% 0.015 70);
+    --rule: oklch(31% 0.015 60);
+    --accent: oklch(72% 0.17 35);
+    --accent-ink: oklch(16% 0.02 30);
+    --accent-wash: oklch(28% 0.06 35);
+  }
+}
+:root[data-theme="dark"] {
+  --paper: oklch(17% 0.012 60);
+  --paper-deep: oklch(21% 0.015 60);
+  --ink: oklch(94% 0.01 80);
+  --ink-soft: oklch(74% 0.015 75);
+  --ink-mute: oklch(56% 0.015 70);
+  --rule: oklch(31% 0.015 60);
+  --accent: oklch(72% 0.17 35);
+  --accent-ink: oklch(16% 0.02 30);
+  --accent-wash: oklch(28% 0.06 35);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  color: var(--ink);
+  background:
+    radial-gradient(120% 60% at 50% -10%, var(--paper-deep) 0%, transparent 70%),
+    var(--paper);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  font-feature-settings: "tnum" 1;
+}
+a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: 0.18em; }
+a:hover { text-decoration-color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+::selection { background: var(--accent-wash); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.page { max-width: var(--measure); margin-inline: auto; padding-inline: var(--gutter); }
+
+/* ---------- masthead ---------- */
+.masthead {
+  padding-block: var(--space-m) var(--space-l);
+  border-bottom: 1px solid var(--ink);
+  position: relative;
+}
+.masthead__topline {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap;
+  font-size: var(--step--1); color: var(--ink-soft);
+  letter-spacing: 0.02em;
+}
+.masthead__topline strong { color: var(--ink); font-weight: 600; }
+.masthead__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--step-3);
+  line-height: 0.98;
+  letter-spacing: -0.015em;
+  margin: var(--space-m) 0 0;
+  text-wrap: balance;
+  max-width: 14ch;
+}
+.masthead__title em { font-style: italic; color: var(--accent); }
+.masthead__lede {
+  margin: var(--space-m) 0 0;
+  max-width: 44ch;
+  font-size: var(--step-1);
+  line-height: 1.45;
+  color: var(--ink-soft);
+  font-weight: 350;
+}
+.masthead__meta {
+  margin-top: var(--space-m);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, max-content));
+  gap: var(--space-s) var(--space-m);
+  font-size: var(--step--1);
+}
+.masthead__meta div { border-top: 1px solid var(--rule); padding-top: 0.5rem; }
+.masthead__meta dt { color: var(--ink-mute); margin: 0; }
+.masthead__meta dd { margin: 0; font-weight: 600; }
+.masthead__meta dd .num { font-family: var(--font-display); font-size: 1.5em; line-height: 1; margin-right: 0.15em; }
+
+/* staged reveal */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(14px); animation: rise var(--dur) var(--ease-out) forwards; }
+  .reveal:nth-child(2) { animation-delay: 90ms; }
+  .reveal:nth-child(3) { animation-delay: 180ms; }
+  .reveal:nth-child(4) { animation-delay: 270ms; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+}
+
+/* ---------- layout with side rail ---------- */
+.body { display: grid; grid-template-columns: 1fr; gap: var(--space-l) var(--space-m); padding-block: var(--space-l); }
+@media (min-width: 64rem) {
+  .body { grid-template-columns: 11rem 1fr; }
+  .rail { position: sticky; top: 2rem; align-self: start; }
+}
+.rail { font-size: var(--step--1); }
+.rail h2 { font-size: inherit; font-weight: 500; color: var(--ink-mute); margin: 0 0 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.rail ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; }
+@media (min-width: 64rem) { .rail ol { flex-direction: column; gap: 0.35rem; } }
+.rail a { text-decoration: none; color: var(--ink-soft); display: inline-flex; gap: 0.5rem; }
+.rail a:hover { color: var(--accent); }
+.rail a .n { font-family: var(--font-display); font-style: italic; color: var(--ink-mute); min-width: 1.2em; }
+.rail .mac { margin-top: var(--space-m); padding-top: var(--space-s); border-top: 1px solid var(--rule); color: var(--ink-mute); }
+.rail code { font: 0.85em/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--ink-soft); display: block; margin-top: 0.3rem; }
+
+/* ---------- featured ---------- */
+.featured { margin-bottom: var(--space-l); }
+.feats { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-s); }
+@media (min-width: 52rem) { .feats { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); } }
+.feat { min-width: 0; }
+.feat {
+  position: relative; background: var(--paper); border: 1px solid var(--rule); border-top: 3px solid var(--ink);
+  padding: var(--space-m) var(--space-m) var(--space-s);
+  display: flex; flex-direction: column; gap: 0.75rem;
+  transition: border-color 200ms var(--ease-out), background 200ms var(--ease-out);
+}
+.feat:hover { border-top-color: var(--accent); background: var(--paper-deep); }
+.feat .kicker { font-size: var(--step--1); color: var(--ink-mute); display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
+.feat .kicker .n { font-family: var(--font-display); font-style: italic; font-size: 2.2em; line-height: 1; color: var(--accent); flex-shrink: 0; white-space: nowrap; }
+.feat h3 { margin: 0; font-size: var(--step-2); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; text-wrap: balance; }
+.feat--wide h3 { max-width: 18ch; }
+.feat h3 a { text-decoration: none; }
+.feat p { margin: 0; color: var(--ink-soft); font-size: var(--step-0); flex: 1; }
+.facts { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.35rem 1.2rem; font-size: var(--step--1); color: var(--ink-soft); }
+.facts li::before { content: "\2014\00a0"; color: var(--accent); }
+.cmd { margin: 0; padding: 0.7rem 0.9rem; background: var(--ink); color: var(--paper); border-radius: 4px; white-space: pre-wrap; overflow-wrap: anywhere; font: 0.8rem/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; }
+:root[data-theme="dark"] .cmd { background: var(--paper-deep); color: var(--ink); border: 1px solid var(--rule); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cmd { background: var(--paper-deep); color: var(--ink); border: 1px solid var(--rule); } }
+.feat .links { display: flex; flex-wrap: wrap; gap: 0.35rem; padding-top: 0.25rem; }
+
+/* ---------- shelf (featured e-books) ---------- */
+.shelf { margin-bottom: var(--space-l); }
+.section-head {
+  display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 1rem;
+  margin: 0 0 var(--space-m);
+}
+.section-head .roman { font-family: var(--font-display); font-style: italic; font-size: var(--step-2); line-height: 1; color: var(--accent); }
+.section-head h2 { margin: 0; font-size: var(--step-1); font-weight: 650; letter-spacing: -0.01em; }
+.section-head p { grid-column: 2; margin: 0.15rem 0 0; color: var(--ink-soft); font-size: var(--step--1); max-width: 56ch; }
+
+.books { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+@media (min-width: 40rem) { .books { grid-template-columns: repeat(3, 1fr); } }
+.book {
+  position: relative; background: var(--paper); padding: var(--space-m) var(--space-s) var(--space-s);
+  display: flex; flex-direction: column; gap: 0.6rem; min-height: 15rem;
+  transition: background 200ms var(--ease-out);
+}
+.book::before {
+  content: ""; position: absolute; inset: 0 auto 0 0; width: 6px; background: var(--spine);
+}
+.book:hover { background: var(--paper-deep); }
+.book .kicker { font-size: var(--step--1); color: var(--ink-mute); display: flex; justify-content: space-between; }
+.book .kicker .n { font-family: var(--font-display); font-style: italic; font-size: 1.6em; line-height: 1; color: var(--spine); }
+.book h3 { margin: 0; font-size: var(--step-1); font-weight: 650; line-height: 1.25; letter-spacing: -0.01em; }
+.book h3 a { text-decoration: none; }
+.book h3 a::after { content: ""; position: absolute; inset: 0; }
+.book p { margin: 0; color: var(--ink-soft); font-size: var(--step--1); flex: 1; }
+.book .go { font-size: var(--step--1); color: var(--accent); font-weight: 600; }
+.book .go::after { content: " \2197"; }
+
+/* ---------- index sections ---------- */
+.index { display: flex; flex-direction: column; gap: var(--space-l); }
+.entries { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.entry {
+  display: grid; gap: 0.35rem var(--space-s);
+  grid-template-columns: 2.4rem 1fr;
+  padding: var(--space-s) 0;
+  border-bottom: 1px solid var(--rule);
+  position: relative;
+}
+@media (min-width: 48rem) { .entry { grid-template-columns: 2.6rem 1.15fr 1.6fr auto; align-items: baseline; } }
+.entry .n { font-family: var(--font-display); font-style: italic; font-size: var(--step-1); color: var(--ink-mute); line-height: 1; transition: color 150ms; }
+.entry:hover .n { color: var(--accent); }
+.entry h3 { margin: 0; font-size: var(--step-0); font-weight: 650; line-height: 1.3; }
+.entry h3 a { text-decoration: none; background-image: linear-gradient(var(--accent), var(--accent)); background-size: 0 1.5px; background-repeat: no-repeat; background-position: 0 100%; transition: background-size 220ms var(--ease-out); }
+.entry:hover h3 a { background-size: 100% 1.5px; }
+.entry .repo { display: block; font: 0.78em/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--ink-mute); margin-top: 0.15rem; }
+.entry p { margin: 0; color: var(--ink-soft); font-size: var(--step--1); grid-column: 2; }
+@media (min-width: 48rem) { .entry p { grid-column: auto; } }
+.entry .tags { grid-column: 2; display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; }
+@media (min-width: 48rem) { .entry .tags { grid-column: auto; justify-content: flex-end; } }
+.tag { font-size: 0.72rem; letter-spacing: 0.03em; padding: 0.15rem 0.5rem; border: 1px solid var(--rule); border-radius: 999px; color: var(--ink-soft); white-space: nowrap; }
+.tag.live { border-color: var(--accent); color: var(--accent); font-weight: 600; text-decoration: none; }
+.tag.live:hover { background: var(--accent); color: var(--accent-ink); }
+.tag.src { text-decoration: none; }
+.tag.src:hover { border-color: var(--ink); color: var(--ink); }
+.entry--archive { opacity: 0.72; }
+.entry--archive:hover { opacity: 1; }
+
+/* ---------- footer ---------- */
+.footer {
+  border-top: 1px solid var(--ink); padding-block: var(--space-m) var(--space-l);
+  display: flex; flex-wrap: wrap; gap: var(--space-s) var(--space-m); justify-content: space-between;
+  font-size: var(--step--1); color: var(--ink-soft);
+}
+.footer p { margin: 0; }
+.footer .sig { font-family: var(--font-display); font-style: italic; font-size: 1.4em; color: var(--ink); }
+</style>
+</head>
+<body>
+<a class="sr-only" href="#index">본문으로 건너뛰기</a>
+
+<header class="page masthead" aria-label="소개">
+  <div class="masthead__topline reveal">
+    <span><strong>JS Choi</strong> · <a href="https://github.com/newids">github.com/newids</a></span>
+    <span>2026년 9월 22일 갱신</span>
+  </div>
+  <h1 class="masthead__title reveal">공개 프로젝트 <em>색인</em></h1>
+  <p class="masthead__lede reveal">웹 프론트엔드, Python, 셸 스크립트, 기술 문서. GitHub에 공개한 저장소 38개 중 배포 페이지와 문서가 갖춰진 22건을 분류했습니다. 각 항목은 실행 가능한 페이지와 소스 저장소로 연결됩니다.</p>
+  <dl class="masthead__meta reveal">
+    <div><dt>대표 작업</dt><dd><span class="num">2</span>건</dd></div>
+    <div><dt>e-book</dt><dd><span class="num">3</span>권</dd></div>
+    <div><dt>Codyssey 미션</dt><dd><span class="num">5</span>건</dd></div>
+    <div><dt>도구 · 기획 · 실험 · 아카이브</dt><dd><span class="num">12</span>건</dd></div>
+  </dl>
+</header>
+
+<div class="page body">
+  <nav class="rail" aria-label="목차">
+    <h2>목차</h2>
+    <ol>
+      <li><a href="#featured"><span class="n">Ⅰ</span>대표 작업</a></li>
+      <li><a href="#books"><span class="n">Ⅱ</span>e-book</a></li>
+      <li><a href="#codyssey"><span class="n">Ⅲ</span>Codyssey 미션</a></li>
+      <li><a href="#tools"><span class="n">Ⅳ</span>도구</a></li>
+      <li><a href="#pitch"><span class="n">Ⅴ</span>기획 · 피치</a></li>
+      <li><a href="#lab"><span class="n">Ⅵ</span>실험</a></li>
+      <li><a href="#archive"><span class="n">Ⅶ</span>아카이브</a></li>
+    </ol>
+    <p class="mac">iMac 실습 환경 한 줄 설정
+      <code>curl -fsSL newids.github.io/mac | sh</code>
+    </p>
+  </nav>
+
+  <main id="index">
+    <section class="featured" id="featured" aria-labelledby="h-featured">
+      <div class="section-head">
+        <span class="roman" aria-hidden="true">Ⅰ</span>
+        <h2 id="h-featured">대표 작업</h2>
+        <p>구현 범위와 문서가 가장 잘 갖춰진 두 건. 배포 페이지에서 바로 확인할 수 있습니다.</p>
+      </div>
+      <ul class="feats">
+        <li class="feat feat--wide">
+          <div class="kicker"><span class="n">01</span><span>웹 프론트엔드 · HTML / CSS / JavaScript</span></div>
+          <h3><a href="https://newids.github.io/codyssey-b1-1/">나를 소개하는 웹페이지 — 반응형 포트폴리오</a></h3>
+          <p>외부 라이브러리 없이 순수 HTML/CSS/JS(ES6+)만으로 구현한 개인 포트폴리오. 시맨틱 마크업, CSS 변수, Flexbox/Grid 레이아웃, 바닐라 JS DOM 조작, GitHub REST API 연동, 다크 모드, 폼 검증을 포함합니다. 미션 수행 가이드와 평가 설명서를 저장소에 함께 두어 구현 순서와 판단 근거를 추적할 수 있습니다.</p>
+          <ul class="facts">
+            <li>의존성 0 · 빌드 없음</li>
+            <li>GitHub Pages 배포</li>
+            <li>GUIDE · EVALUATION · OBJECTIVES 문서</li>
+          </ul>
+          <span class="links"><a class="tag live" href="https://newids.github.io/codyssey-b1-1/">열기</a><a class="tag src" href="https://github.com/newids/codyssey-b1-1">저장소</a><a class="tag src" href="https://github.com/newids/codyssey-b1-1/blob/main/docs/GUIDE.md">수행 가이드</a></span>
+        </li>
+        <li class="feat">
+          <div class="kicker"><span class="n">02</span><span>셸 스크립트 · macOS</span></div>
+          <h3><a href="https://newids.github.io/imac-setup/">iMac 실습 환경 자동 설정</a></h3>
+          <p>macOS 키보드 실습 환경(두벌식·세벌식 최종)을 셸 스크립트 한 줄로 구성합니다. 원본 스크립트는 별도 저장소에서 관리하고 이 저장소로 동기화하며, 사용 안내 페이지를 함께 제공합니다.</p>
+          <pre class="cmd" aria-label="설치 명령"><code>curl -fsSL newids.github.io/mac | sh
+curl -fsSL newids.github.io/mac | sh -s -- han3final</code></pre>
+          <span class="links"><a class="tag live" href="https://newids.github.io/imac-setup/">안내 페이지</a><a class="tag src" href="https://github.com/newids/imac-setup">저장소</a></span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="shelf" id="books" aria-labelledby="h-books">
+      <div class="section-head">
+        <span class="roman" aria-hidden="true">Ⅱ</span>
+        <h2 id="h-books">지금 바로 읽을 수 있는 책 세 권</h2>
+        <p>브라우저에서 바로 열리는 단일 페이지 e-book. 검색과 오프라인 저장이 쉽도록 한 파일로 만들었습니다.</p>
+      </div>
+      <ul class="books">
+        <li class="book" style="--spine: var(--shelf-1)">
+          <div class="kicker"><span class="n">03</span><span>Python · 입문</span></div>
+          <h3><a href="https://newids.github.io/python4e1/">미션 파이썬</a></h3>
+          <p>Codyssey 미션 1–3을 완주하는 데 필요한 최소한의 파이썬만 담았습니다. 각 장을 읽고 나면 미션 요구사항 하나를 직접 구현할 수 있게 구성했습니다.</p>
+          <span class="go">읽기</span>
+        </li>
+        <li class="book" style="--spine: var(--shelf-2)">
+          <div class="kicker"><span class="n">04</span><span>Python · AICE 대비</span></div>
+          <h3><a href="https://newids.github.io/python4js/">JavaScript 개발자를 위한 Python</a></h3>
+          <p>AICE Associate·Professional 실기를 JS와의 차이 중심으로 준비합니다. 본문 예제 223개를 모두 실제 실행으로 검증했습니다.</p>
+          <span class="go">읽기</span>
+        </li>
+        <li class="book" style="--spine: var(--shelf-3)">
+          <div class="kicker"><span class="n">05</span><span>딥러닝 · AICE 대비</span></div>
+          <h3><a href="https://newids.github.io/dl4aice/">AICE Associate 딥러닝 실전 교본</a></h3>
+          <p>도해로 익히고 코드로 끝내는 딥러닝 교본. AICE Associate 시험 범위를 실습 순서대로 정리했습니다.</p>
+          <span class="go">읽기</span>
+        </li>
+      </ul>
+    </section>
+
+    <div class="index">
+      <section id="codyssey" aria-labelledby="h-codyssey">
+        <div class="section-head">
+          <span class="roman" aria-hidden="true">Ⅲ</span>
+          <h2 id="h-codyssey">Codyssey 미션</h2>
+          <p>AI 올인원 과정에서 수행한 미션(대표 작업의 B1-1 제외). 저장소마다 수행 가이드와 평가 설명서를 함께 두어 다른 학습자가 그대로 따라 할 수 있습니다.</p>
+        </div>
+        <ol class="entries">
+          <li class="entry">
+            <span class="n">06</span>
+            <h3><a href="https://github.com/newids/codyssey-b1-2">버튼 누르면 화면이 스르륵 바뀌는 웹사이트</a><span class="repo">codyssey-b1-2</span></h3>
+            <p>React 18 + React Router + Supabase로 만든 React 학습용 SPA. 8개 레슨과 연습 문제, 로그인하면 남는 학습 노트와 진도.</p>
+            <span class="tags"><span class="tag">React · Supabase</span><a class="tag live" href="https://codyssey-b1-2-navy.vercel.app">열기</a><a class="tag src" href="https://github.com/newids/codyssey-b1-2">저장소</a></span>
+          </li>
+          <li class="entry">
+            <span class="n">07</span>
+            <h3><a href="https://github.com/newids/codyssey-e1-1">내 컴퓨터에 개발자용 '작업실' 꾸미기</a><span class="repo">codyssey-e1-1</span></h3>
+            <p>터미널·Docker·Git으로 재현 가능한 개발 환경을 구축하고, 모든 과정을 명령어와 출력 증거로 기록했습니다.</p>
+            <span class="tags"><span class="tag">CLI · Docker · Git</span><a class="tag src" href="https://github.com/newids/codyssey-e1-1">저장소</a></span>
+          </li>
+          <li class="entry">
+            <span class="n">08</span>
+            <h3><a href="https://github.com/newids/codyssey-e1-2">컴퓨터에게 명령 내리는 말, 파이썬 처음 배우기</a><span class="repo">codyssey-e1-2</span></h3>
+            <p>클래스로 만든 터미널 4지선다 퀴즈 게임. 문제 등록과 점수는 JSON 파일에 남고, 기능 단위 커밋과 브랜치 병합을 실습했습니다.</p>
+            <span class="tags"><span class="tag">Python</span><a class="tag live" href="https://newids.github.io/codyssey-e1-2/">열기</a><a class="tag src" href="https://github.com/newids/codyssey-e1-2">저장소</a></span>
+          </li>
+          <li class="entry">
+            <span class="n">09</span>
+            <h3><a href="https://github.com/newids/codyssey-e1-3">AI가 계산하는 방식을 흉내 내는 작은 계산기</a><span class="repo">codyssey-e1-3</span></h3>
+            <p>Mini NPU 시뮬레이터. MAC 연산으로 십자가와 X 패턴을 판별하고, 필터 크기 3×3에서 25×25까지 연산 시간 변화를 측정합니다.</p>
+            <span class="tags"><span class="tag">Python</span><a class="tag src" href="https://github.com/newids/codyssey-e1-3">저장소</a></span>
+          </li>
+          <li class="entry">
+            <span class="n">10</span>
+            <h3><a href="https://github.com/newids/codyssey-e2-1">금융 코디세이 — 아이디어톤 텀 프로젝트</a><span class="repo">codyssey-e2-1</span></h3>
+            <p>AI 핀테크 도메인 팀 기획. 전기통신금융사기에 어떤 미끼에 약한지 AI가 찾아내 그 미끼만 골라 훈련하는 시민 대상 상시 모의훈련 체계.</p>
+            <span class="tags"><span class="tag">기획서 · 발표자료</span><a class="tag live" href="https://newids.github.io/codyssey-e2-1/">열기</a><a class="tag src" href="https://github.com/newids/codyssey-e2-1">저장소</a></span>
+          </li>
+        </ol>
+      </section>
+
+      <section id="tools" aria-labelledby="h-tools">
+        <div class="section-head">
+          <span class="roman" aria-hidden="true">Ⅳ</span>
+          <h2 id="h-tools">도구</h2>
+          <p>설치 없이 브라우저에서 끝나는 작은 도구와 macOS 앱. 파일은 기기 밖으로 나가지 않습니다.</p>
+        </div>
+        <ol class="entries">
+          <li class="entry">
+            <span class="n">11</span>
+            <h3><a href="https://github.com/newids/gen-qr">GEN·QR</a><span class="repo">gen-qr</span></h3>
+            <p>URL을 넣으면 즉시 QR 코드를 만들어 줍니다. 오류 보정 레벨 선택, PNG·SVG 다운로드, 클립보드 복사.</p>
+            <span class="tags"><span class="tag">MIT</span><a class="tag live" href="https://newids.github.io/gen-qr/">열기</a><a class="tag src" href="https://github.com/newids/gen-qr">저장소</a></span>
+          </li>
+          <li class="entry">
+            <span class="n">12</span>
+            <h3><a href="https://github.com/newids/pdf2md">PDF → Markdown</a><span class="repo">pdf2md</span></h3>
+            <p>글자 크기로 제목을 잡고, 반복되는 머리글·바닥글을 걷어내고, 열 조각을 표로 묶습니다. 웹과 CLI 두 방법이 같은 규칙을 씁니다.</p>
+            <span class="tags"><span class="tag">웹 · CLI</span><a class="tag live" href="https://newids.github.io/pdf2md/">열기</a><a class="tag src" href="https://github.com/newids/pdf2md">저장소</a></span>
+          </li>
+          <li class="entry">
+            <span class="n">13</span>
+            <h3><a href="https://github.com/newids/pdf2img">PDF → PNG</a><span class="repo">pdf2img</span></h3>
+            <p>PDF 모든 페이지를 PNG로. iPhone·iPad Safari에서도 PDF.js로 기기 안에서만 렌더링합니다.</p>
+            <span class="tags"><span class="tag">MIT</span><a class="tag live" href="https://pdf2img-one.vercel.app">열기</a><a class="tag src" href="https://github.com/newids/pdf2img">저장소</a></span>
+          </li>
+          <li class="entry">
+            <span class="n">14</span>
+            <h3><a href="https://github.com/newids/show-me-now">Show Me Now</a><span class="repo">show-me-now</span></h3>
+            <p>전체 화면 반투명 HUD로 현재 날짜와 시각을 크게 띄우고 10초 뒤 사라지는 macOS 앱. 스페이스를 누르고 있으면 멈춥니다.</p>
+            <span class="tags"><span class="tag">Swift · macOS</span><a class="tag src" href="https://github.com/newids/show-me-now">저장소</a></span>
+          </li>
+        </ol>
+      </section>
+
+      <section id="pitch" aria-labelledby="h-pitch">
+        <div class="section-head">
+          <span class="roman" aria-hidden="true">Ⅴ</span>
+          <h2 id="h-pitch">기획 · 피치</h2>
+          <p>사업계획서와 발표 자료를 웹 페이지로 묶은 것.</p>
+        </div>
+        <ol class="entries">
+          <li class="entry">
+            <span class="n">15</span>
+            <h3><a href="https://github.com/newids/qrid-pitch">QRID</a><span class="repo">qrid-pitch</span></h3>
+            <p>QR 한 번 스캔으로 연락처를 동시에 교환하는 서비스. 사업계획서, 린 캔버스, 피치덱, MVP 현황.</p>
+            <span class="tags"><span class="tag">피치덱</span><a class="tag live" href="https://newids.github.io/qrid-pitch/">열기</a><a class="tag src" href="https://github.com/newids/qrid-pitch">저장소</a></span>
+          </li>
+          <li class="entry">
+            <span class="n">16</span>
+            <h3><a href="https://github.com/newids/fodyssey">금융백신 FinVaccine</a><span class="repo">fodyssey</span></h3>
+            <p>팀 Fodyssey의 공모전 아이디어 사이트.</p>
+            <span class="tags"><span class="tag">공모전</span><a class="tag live" href="https://newids.github.io/fodyssey/">열기</a><a class="tag src" href="https://github.com/newids/fodyssey">저장소</a></span>
+          </li>
+        </ol>
+      </section>
+
+      <section id="lab" aria-labelledby="h-lab">
+        <div class="section-head">
+          <span class="roman" aria-hidden="true">Ⅵ</span>
+          <h2 id="h-lab">실험</h2>
+          <p>완성보다 시도에 가까운 프로젝트. 코드는 볼 수 있지만 배포는 없습니다.</p>
+        </div>
+        <ol class="entries">
+          <li class="entry">
+            <span class="n">17</span>
+            <h3><a href="https://github.com/newids/media-organizer">MediaOrganizer</a><span class="repo">media-organizer</span></h3>
+            <p>Rust와 Dioxus로 만든 VS Code 스타일 분할 패널의 크로스플랫폼 미디어·파일 관리 앱.</p>
+            <span class="tags"><span class="tag">Rust · Dioxus</span><a class="tag src" href="https://github.com/newids/media-organizer">저장소</a></span>
+          </li>
+          <li class="entry">
+            <span class="n">18</span>
+            <h3><a href="https://github.com/newids/ai-scape">AI-Scape</a><span class="repo">ai-scape</span></h3>
+            <p>질문을 한 번 입력하면 ChatGPT·Claude·Gemini 답변을 나란히 보여주는 브라우저 확장 시작 페이지.</p>
+            <span class="tags"><span class="tag">Next.js</span><a class="tag src" href="https://github.com/newids/ai-scape">저장소</a></span>
+          </li>
+          <li class="entry">
+            <span class="n">19</span>
+            <h3><a href="https://github.com/newids/vibe-coding-note">Vibe Coding Notes</a><span class="repo">vibe-coding-note</span></h3>
+            <p>코딩 도구 사용 경험을 기록하는 노트 앱. React + Express + PostgreSQL 풀스택.</p>
+            <span class="tags"><span class="tag">React · Express</span><a class="tag src" href="https://github.com/newids/vibe-coding-note">저장소</a></span>
+          </li>
+          <li class="entry">
+            <span class="n">20</span>
+            <h3><a href="https://github.com/newids/italy_trip">이탈리아 9일 여행 일정</a><span class="repo">italy_trip</span></h3>
+            <p>한국어·영어·이탈리아어를 지원하는 여행 일정 사이트.</p>
+            <span class="tags"><span class="tag">Next.js</span><a class="tag src" href="https://github.com/newids/italy_trip">저장소</a></span>
+          </li>
+        </ol>
+      </section>
+
+      <section id="archive" aria-labelledby="h-archive">
+        <div class="section-head">
+          <span class="roman" aria-hidden="true">Ⅶ</span>
+          <h2 id="h-archive">아카이브, 2017–2019</h2>
+          <p>블록체인 학습 시기의 기록. 지금은 손대지 않지만 지우지도 않았습니다.</p>
+        </div>
+        <ol class="entries">
+          <li class="entry entry--archive">
+            <span class="n">21</span>
+            <h3><a href="https://github.com/newids/simchain">simchain</a><span class="repo">simchain · simchain-api</span></h3>
+            <p>Angular로 만든 블록체인 시뮬레이터와 그 API 서버. 이 계정에서 유일하게 별과 포크를 받은 저장소.</p>
+            <span class="tags"><span class="tag">Angular · Node</span><a class="tag src" href="https://github.com/newids/simchain">저장소</a><a class="tag src" href="https://github.com/newids/simchain-api">API</a></span>
+          </li>
+          <li class="entry entry--archive">
+            <span class="n">22</span>
+            <h3><a href="https://github.com/newids/helloblockchain.github.io">helloblockchain</a><span class="repo">helloblockchain.github.io</span></h3>
+            <p>블록체인 스터디 페이지.</p>
+            <span class="tags"><a class="tag src" href="https://github.com/newids/helloblockchain.github.io">저장소</a></span>
+          </li>
+        </ol>
+      </section>
+    </div>
+  </main>
+</div>
+
+<footer class="page footer">
+  <p><span class="sig">JS Choi</span> · <a href="https://github.com/newids">github.com/newids</a></p>
+  <p>포크와 빈 저장소는 뺐습니다. 이 페이지의 소스도 <a href="https://github.com/newids/newids.github.io">저장소</a>에 있습니다.</p>
+</footer>
+</body>
+</html>
