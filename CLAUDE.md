@@ -19,7 +19,9 @@ Deploy = push to `master`, then check https://newids.github.io/ after GitHub Pag
 - `mac` — a plain POSIX `sh` script, deliberately extensionless so it is served raw at
   `https://newids.github.io/mac`. It is a short-URL alias used as
   `curl -fsSL newids.github.io/mac | sh [-s -- <args>]` and just forwards all arguments to
-  `iMac-setup.sh` in the `newids/claude-docker` repo. The real setup logic lives there, not here.
+  `iMac-setup.sh`, fetched from `https://newids.github.io/imac-setup/` first and from the
+  `newids/codyssey-imac` repo (raw.githubusercontent.com) as a fallback. The real setup logic lives
+  in `codyssey-imac` and is synced into `imac-setup`, not here.
 
 ## Constraints
 

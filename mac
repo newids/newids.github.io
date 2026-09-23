@@ -3,7 +3,19 @@
 #
 #   curl -fsSL newids.github.io/mac | sh                 # 두벌식
 #   curl -fsSL newids.github.io/mac | sh -s -- han3final # 세벌식 최종
+#   curl -fsSL newids.github.io/mac | sh -s -- --list    # 배열 목록
 #
-# 실제 스크립트는 claude-docker 저장소의 iMac-setup.sh 이며, 이 파일은
-# 그것을 받아 인자를 그대로 넘겨 실행하는 역할만 한다.
-curl -fsSL https://raw.githubusercontent.com/newids/claude-docker/main/iMac-setup.sh | sh -s -- "$@"
+# 실제 스크립트는 imac-setup 저장소의 iMac-setup.sh 이며(원본은 codyssey-imac 에서
+# 관리하고 imac-setup 으로 동기화), 이 파일은 그것을 받아 인자를 그대로 넘겨 실행하는
+# 역할만 한다. 같은 도메인(newids.github.io)에서 먼저 받고, 실패하면 GitHub raw 로 받는다.
+set -u
+
+PRIMARY="https://newids.github.io/imac-setup/iMac-setup.sh"
+FALLBACK="https://raw.githubusercontent.com/newids/codyssey-imac/main/iMac-setup.sh"
+
+script=$(curl -fsSL "$PRIMARY" 2>/dev/null) || script=$(curl -fsSL "$FALLBACK" 2>/dev/null) || {
+    printf '%s\n' "iMac-setup.sh 를 받지 못했습니다. 네트워크를 확인하세요:" "  $PRIMARY" "  $FALLBACK" >&2
+    exit 1
+}
+
+printf '%s\n' "$script" | sh -s -- "$@"

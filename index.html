@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>newids — 공개 프로젝트 색인</title>
-<meta name="description" content="JS Choi(newids)가 공개한 e-book, Codyssey 미션 결과물, 브라우저 도구, 기획 문서와 실험 프로젝트를 한 페이지에 정리한 색인.">
-<meta property="og:title" content="newids — 공개 프로젝트 색인">
-<meta property="og:description" content="대표 작업 2건, e-book 3권, Codyssey 미션 5건, 도구 4개, 기획·피치 2건, 실험 4건, 아카이브 2건.">
+<title>JS Choi의 저장소 색인</title>
+<meta name="description" content="JS Choi(newids)의 GitHub 공개 저장소 38개 중 22개를 7개 분류로 정리한 색인.">
+<meta property="og:title" content="JS Choi의 저장소 색인">
+<meta property="og:description" content="최근 작업 2건, e-book 3권, Codyssey 미션 5건, 도구 4개, 기획·피치 2건, 실험 4건, 아카이브 2건.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://newids.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%23f6f1e8%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Georgia,serif%27 font-style=%27italic%27 font-size=%2720%27 text-anchor=%27middle%27 fill=%27%23b5402e%27%3EN%3C/text%3E%3C/svg%3E">
@@ -135,12 +135,32 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .masthead__meta dd { margin: 0; font-weight: 600; }
 .masthead__meta dd .num { font-family: var(--font-display); font-size: 1.5em; line-height: 1; margin-right: 0.15em; }
 
+.callout {
+  margin-top: var(--space-m);
+  max-width: 40rem;
+  display: grid; gap: 0.6rem; justify-items: start;
+  padding: var(--space-s) var(--space-m) var(--space-s) calc(var(--space-s) + 0.5rem);
+  border: 1px solid var(--rule); border-left: 4px solid var(--accent);
+  background: var(--paper-deep);
+  font-size: var(--step--1);
+}
+.callout__label { font-weight: 650; color: var(--ink); white-space: nowrap; }
+.callout__cmd {
+  display: block; max-width: 100%; padding: 0.55rem 0.9rem; border-radius: 4px;
+  background: var(--ink); color: var(--paper);
+  font: clamp(0.78rem, 0.6rem + 0.8vw, 0.9rem)/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+  overflow-x: auto; white-space: nowrap; user-select: all;
+}
+.callout__note { color: var(--ink-soft); }
+.callout__note code { font: 0.85em/1 ui-monospace, SFMono-Regular, Menlo, monospace; padding: 0.1rem 0.35rem; border: 1px solid var(--rule); border-radius: 3px; }
+
 /* staged reveal */
 @media (prefers-reduced-motion: no-preference) {
   .reveal { opacity: 0; transform: translateY(14px); animation: rise var(--dur) var(--ease-out) forwards; }
   .reveal:nth-child(2) { animation-delay: 90ms; }
   .reveal:nth-child(3) { animation-delay: 180ms; }
   .reveal:nth-child(4) { animation-delay: 270ms; }
+  .reveal:nth-child(5) { animation-delay: 360ms; }
   @keyframes rise { to { opacity: 1; transform: none; } }
 }
 
@@ -157,13 +177,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .rail a { text-decoration: none; color: var(--ink-soft); display: inline-flex; gap: 0.5rem; }
 .rail a:hover { color: var(--accent); }
 .rail a .n { font-family: var(--font-display); font-style: italic; color: var(--ink-mute); min-width: 1.2em; }
-.rail .mac { margin-top: var(--space-m); padding-top: var(--space-s); border-top: 1px solid var(--rule); color: var(--ink-mute); }
-.rail code { font: 0.85em/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--ink-soft); display: block; margin-top: 0.3rem; }
 
 /* ---------- featured ---------- */
 .featured { margin-bottom: var(--space-l); }
 .feats { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-s); }
-@media (min-width: 52rem) { .feats { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); } }
+@media (min-width: 52rem) { .feats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .feat { min-width: 0; }
 .feat {
   position: relative; background: var(--paper); border: 1px solid var(--rule); border-top: 3px solid var(--ink);
@@ -175,7 +193,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .feat .kicker { font-size: var(--step--1); color: var(--ink-mute); display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
 .feat .kicker .n { font-family: var(--font-display); font-style: italic; font-size: 2.2em; line-height: 1; color: var(--accent); flex-shrink: 0; white-space: nowrap; }
 .feat h3 { margin: 0; font-size: var(--step-2); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; text-wrap: balance; }
-.feat--wide h3 { max-width: 18ch; }
 .feat h3 a { text-decoration: none; }
 .feat p { margin: 0; color: var(--ink-soft); font-size: var(--step-0); flex: 1; }
 .facts { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.35rem 1.2rem; font-size: var(--step--1); color: var(--ink-soft); }
@@ -260,23 +277,28 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 <header class="page masthead" aria-label="소개">
   <div class="masthead__topline reveal">
     <span><strong>JS Choi</strong> · <a href="https://github.com/newids">github.com/newids</a></span>
-    <span>2026년 9월 22일 갱신</span>
+    <span>2026년 9월 23일 갱신</span>
   </div>
-  <h1 class="masthead__title reveal">공개 프로젝트 <em>색인</em></h1>
-  <p class="masthead__lede reveal">웹 프론트엔드, Python, 셸 스크립트, 기술 문서. GitHub에 공개한 저장소 38개 중 배포 페이지와 문서가 갖춰진 22건을 분류했습니다. 각 항목은 실행 가능한 페이지와 소스 저장소로 연결됩니다.</p>
+  <h1 class="masthead__title reveal">JS Choi의 저장소 <em>색인</em></h1>
+  <p class="masthead__lede reveal">GitHub 공개 저장소 38개 중 22개를 7개 분류로 정리했습니다. 각 항목은 배포 페이지와 소스 저장소 링크를 포함합니다.</p>
   <dl class="masthead__meta reveal">
-    <div><dt>대표 작업</dt><dd><span class="num">2</span>건</dd></div>
+    <div><dt>최근 작업</dt><dd><span class="num">2</span>건</dd></div>
     <div><dt>e-book</dt><dd><span class="num">3</span>권</dd></div>
     <div><dt>Codyssey 미션</dt><dd><span class="num">5</span>건</dd></div>
     <div><dt>도구 · 기획 · 실험 · 아카이브</dt><dd><span class="num">12</span>건</dd></div>
   </dl>
+  <aside class="callout reveal" aria-labelledby="callout-label">
+    <span class="callout__label" id="callout-label">iMac 실습 환경 한 줄 설정</span>
+    <code class="callout__cmd">curl -fsSL newids.github.io/mac | sh</code>
+    <span class="callout__note">세벌식 최종은 <code>sh -s -- han3final</code> · <a href="https://newids.github.io/imac-setup/">안내 페이지</a></span>
+  </aside>
 </header>
 
 <div class="page body">
   <nav class="rail" aria-label="목차">
     <h2>목차</h2>
     <ol>
-      <li><a href="#featured"><span class="n">Ⅰ</span>대표 작업</a></li>
+      <li><a href="#featured"><span class="n">Ⅰ</span>최근 작업</a></li>
       <li><a href="#books"><span class="n">Ⅱ</span>e-book</a></li>
       <li><a href="#codyssey"><span class="n">Ⅲ</span>Codyssey 미션</a></li>
       <li><a href="#tools"><span class="n">Ⅳ</span>도구</a></li>
@@ -284,21 +306,26 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
       <li><a href="#lab"><span class="n">Ⅵ</span>실험</a></li>
       <li><a href="#archive"><span class="n">Ⅶ</span>아카이브</a></li>
     </ol>
-    <p class="mac">iMac 실습 환경 한 줄 설정
-      <code>curl -fsSL newids.github.io/mac | sh</code>
-    </p>
   </nav>
 
   <main id="index">
     <section class="featured" id="featured" aria-labelledby="h-featured">
       <div class="section-head">
         <span class="roman" aria-hidden="true">Ⅰ</span>
-        <h2 id="h-featured">대표 작업</h2>
-        <p>구현 범위와 문서가 가장 잘 갖춰진 두 건. 배포 페이지에서 바로 확인할 수 있습니다.</p>
+        <h2 id="h-featured">최근 작업</h2>
+        <p>가장 최근에 갱신한 두 건. 배포 페이지에서 바로 확인할 수 있습니다.</p>
       </div>
       <ul class="feats">
-        <li class="feat feat--wide">
-          <div class="kicker"><span class="n">01</span><span>웹 프론트엔드 · HTML / CSS / JavaScript</span></div>
+        <li class="feat">
+          <div class="kicker"><span class="n">01</span><span>셸 스크립트 · macOS</span></div>
+          <h3><a href="https://newids.github.io/imac-setup/">iMac 실습 환경 자동 설정</a></h3>
+          <p>macOS 키보드 실습 환경(두벌식·세벌식 최종)을 셸 스크립트 한 줄로 구성합니다. 원본 스크립트는 별도 저장소에서 관리하고 이 저장소로 동기화하며, 사용 안내 페이지를 함께 제공합니다.</p>
+          <pre class="cmd" aria-label="설치 명령"><code>curl -fsSL newids.github.io/mac | sh
+curl -fsSL newids.github.io/mac | sh -s -- han3final</code></pre>
+          <span class="links"><a class="tag live" href="https://newids.github.io/imac-setup/">안내 페이지</a><a class="tag src" href="https://github.com/newids/imac-setup">저장소</a></span>
+        </li>
+        <li class="feat">
+          <div class="kicker"><span class="n">02</span><span>웹 프론트엔드 · HTML / CSS / JavaScript</span></div>
           <h3><a href="https://newids.github.io/codyssey-b1-1/">나를 소개하는 웹페이지 — 반응형 포트폴리오</a></h3>
           <p>외부 라이브러리 없이 순수 HTML/CSS/JS(ES6+)만으로 구현한 개인 포트폴리오. 시맨틱 마크업, CSS 변수, Flexbox/Grid 레이아웃, 바닐라 JS DOM 조작, GitHub REST API 연동, 다크 모드, 폼 검증을 포함합니다. 미션 수행 가이드와 평가 설명서를 저장소에 함께 두어 구현 순서와 판단 근거를 추적할 수 있습니다.</p>
           <ul class="facts">
@@ -307,14 +334,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
             <li>GUIDE · EVALUATION · OBJECTIVES 문서</li>
           </ul>
           <span class="links"><a class="tag live" href="https://newids.github.io/codyssey-b1-1/">열기</a><a class="tag src" href="https://github.com/newids/codyssey-b1-1">저장소</a><a class="tag src" href="https://github.com/newids/codyssey-b1-1/blob/main/docs/GUIDE.md">수행 가이드</a></span>
-        </li>
-        <li class="feat">
-          <div class="kicker"><span class="n">02</span><span>셸 스크립트 · macOS</span></div>
-          <h3><a href="https://newids.github.io/imac-setup/">iMac 실습 환경 자동 설정</a></h3>
-          <p>macOS 키보드 실습 환경(두벌식·세벌식 최종)을 셸 스크립트 한 줄로 구성합니다. 원본 스크립트는 별도 저장소에서 관리하고 이 저장소로 동기화하며, 사용 안내 페이지를 함께 제공합니다.</p>
-          <pre class="cmd" aria-label="설치 명령"><code>curl -fsSL newids.github.io/mac | sh
-curl -fsSL newids.github.io/mac | sh -s -- han3final</code></pre>
-          <span class="links"><a class="tag live" href="https://newids.github.io/imac-setup/">안내 페이지</a><a class="tag src" href="https://github.com/newids/imac-setup">저장소</a></span>
         </li>
       </ul>
     </section>
@@ -352,7 +371,7 @@ curl -fsSL newids.github.io/mac | sh -s -- han3final</code></pre>
         <div class="section-head">
           <span class="roman" aria-hidden="true">Ⅲ</span>
           <h2 id="h-codyssey">Codyssey 미션</h2>
-          <p>AI 올인원 과정에서 수행한 미션(대표 작업의 B1-1 제외). 저장소마다 수행 가이드와 평가 설명서를 함께 두어 다른 학습자가 그대로 따라 할 수 있습니다.</p>
+          <p>AI 올인원 과정에서 수행한 미션(최근 작업의 B1-1 제외). 저장소마다 수행 가이드와 평가 설명서를 함께 두어 다른 학습자가 그대로 따라 할 수 있습니다.</p>
         </div>
         <ol class="entries">
           <li class="entry">
