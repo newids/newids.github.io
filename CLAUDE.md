@@ -19,6 +19,8 @@ Deploy = push to `master`, then check https://newids.github.io/ after GitHub Pag
   the masthead counts, and the "갱신" date (in the footer) together. Colors are oklch role tokens on `:root`;
   dark mode is `prefers-color-scheme` plus a `data-theme` override. Both blocks must stay in sync, and every
   text/background pair was measured (WCAG + APCA) before shipping, so re-measure if you change a token.
+  The masthead has two stacked `.callout` boxes: the `mac` one-liner and the BTS Key DMG download. The BTS Key
+  chip hardcodes the release version, so refresh it with `gh release view --repo newids/bts-key-imac`.
 - `theme.js` — the only script: the 라이트·다크·시스템 toggle in the masthead. Loaded blocking in `<head>` so
   the stored choice applies before first paint; it reads/writes `localStorage` inside try/catch.
 - `README.md` — GitHub-facing summary with the main links. Keep it in sync with `index.html`.

@@ -8,3 +8,4 @@ https://newids.github.io/ — JS Choi(newids)의 GitHub 공개 저장소 42개 �
 - 도구: [GEN·QR](https://newids.github.io/gen-qr/) · [pdf2md](https://newids.github.io/pdf2md/) · [pdf2img](https://pdf2img-one.vercel.app) · [세벌식 최종 자판](https://newids.github.io/sebeolsik-final-keyboard/) · [BTS Key](https://newids.github.io/bts-key-imac/) · [imac-setup](https://newids.github.io/imac-setup/)
 - iMac 실습 환경 설정: `curl -fsSL newids.github.io/mac | sh` (세벌식 최종은 `sh -s -- han3final`)
 - 개인용 설정: `curl -fsSL newids.github.io/iMac4newid | sh`
+- MacBook을 iMac 키보드로: [BTS Key DMG 내려받기](https://github.com/newids/bts-key-imac/releases/latest) (macOS 13 이상, `⌥⌘K`로 전환)

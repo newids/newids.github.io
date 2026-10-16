@@ -172,6 +172,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 }
 .callout__note { color: var(--ink-soft); }
 .callout__note code { font: 0.85em/1 ui-monospace, SFMono-Regular, Menlo, monospace; padding: 0.1rem 0.35rem; border: 1px solid var(--rule); border-radius: 3px; }
+.callout + .callout { margin-top: var(--space-s); }
+a.callout__cmd { text-decoration: none; user-select: auto; font-family: var(--font-body); font-weight: 600; transition: background-color 160ms var(--ease-out); }
+a.callout__cmd:hover { background: var(--accent); color: var(--paper); }
 
 /* staged reveal */
 @media (prefers-reduced-motion: no-preference) {
@@ -180,6 +183,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   .reveal:nth-child(3) { animation-delay: 180ms; }
   .reveal:nth-child(4) { animation-delay: 270ms; }
   .reveal:nth-child(5) { animation-delay: 360ms; }
+  .reveal:nth-child(6) { animation-delay: 450ms; }
   @keyframes rise { to { opacity: 1; transform: none; } }
 }
 
@@ -318,6 +322,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
     <span class="callout__label" id="callout-label">iMac 실습 환경 한 줄 설정</span>
     <code class="callout__cmd">curl -fsSL newids.github.io/mac | sh</code>
     <span class="callout__note">세벌식 최종은 <code>sh -s -- han3final</code> · <a href="https://newids.github.io/imac-setup/">안내 페이지</a></span>
+  </aside>
+  <aside class="callout reveal" aria-labelledby="callout-btskey-label">
+    <span class="callout__label" id="callout-btskey-label">MacBook을 iMac 키보드로 — BTS Key</span>
+    <a class="callout__cmd" href="https://github.com/newids/bts-key-imac/releases/latest">BTS Key v0.1.4 DMG 내려받기 ↓</a>
+    <span class="callout__note">macOS 13 이상 MacBook · <code>⌥⌘K</code>로 입력 전환 · <a href="https://newids.github.io/bts-key-imac/">웹사이트</a></span>
   </aside>
 </header>
 
